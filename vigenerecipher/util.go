@@ -1,11 +1,11 @@
-package util
+package vigenerecipher
 
 import (
 	"strings"
 )
 
 func Sanitize(text string) string {
-	var bulder strings.Builder
+	var builder strings.Builder
 	for _, r := range text {
 		if 65 <= r && r <= 90 {
 			builder.WriteRune(r)

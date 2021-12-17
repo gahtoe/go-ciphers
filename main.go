@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"github.com/gahtoe/go-ciphers/caesarcipher" 
-	"github.com/gahtpe/go-ciphers/vigenerecipher"
+	c "github.com/gahtoe/go-ciphers/caesarcipher" 
+	v "github.com/gahtoe/go-ciphers/vigenerecipher"
 )
 
 func main() {
@@ -11,11 +11,11 @@ func main() {
 	const shift = 3
 	const key = "KEY"
 	fmt.Println("CAESAR")
-	encrypted := caesarcipher.Encrypt(msg, shift)
-	decrypted := caesarcipher.Decrypt(encrypted, shift)
-	fmt.Printf("Plaintext: %s\nShift: %d\nEncrypted: %s\nDecrypted: %s\n", msg, shift, encrypted, decrypted)
+	cencrypted := c.Encrypt(msg, shift)
+	cdecrypted := c.Decrypt(cencrypted, shift)
+	fmt.Printf("Plaintext: %s\nShift: %d\nEncrypted: %s\nDecrypted: %s\n", msg, shift, cencrypted, cdecrypted)
 	fmt.Println("VIGENERE")
-	encrypted := vigenerecipher.Encrypt(msg, key)
-	decrypted := vigenerecipher.Decrypt(encrypted, key)
-	fmt.Printf("Plaintext: %s\nKey: %s\nEncrypted: %s\nDecrypted: %s\n", msg, key, encrypted, decrypted)
+	vencrypted := v.Encrypt(msg, key)
+	vdecrypted := v.Decrypt(vencrypted, key)
+	fmt.Printf("Plaintext: %s\nKey: %s\nEncrypted: %s\nDecrypted: %s\n", msg, key, vencrypted, vdecrypted)
 }
