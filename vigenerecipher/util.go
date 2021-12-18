@@ -7,9 +7,9 @@ import (
 func Sanitize(text string) string {
 	var builder strings.Builder
 	for _, r := range text {
-		if 65 <= r && r <= 90 {
+		if 'A' <= r && r <= 'Z' {
 			builder.WriteRune(r)
-		} else if 97 <= r && r <= 122 {
+		} else if 'a' <= r && r <= 'z' {
 			builder.WriteRune(r - 32)
 		}
 	}	
